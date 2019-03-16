@@ -17,6 +17,8 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 const PurgecssPluginConfig = new PurgecssPlugin({
 	paths: glob.sync(path.resolve('./src/**/*'), { nodir: true }),
 	keyframes: true,
+	whitelist: ['react-autosuggest__suggestions-list li'],
+	whitelistPatterns: [/react-autosuggest/],
 });
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({ filename: '[name].css' });
 const BundleAnalyzerConfig = new BundleAnalyzer({
@@ -45,7 +47,12 @@ module.exports = {
 	output: {
 		path: outputDir,
 	},
-	plugins: [HtmlWebpackPluginConfig, PurgecssPluginConfig, MiniCssExtractPluginConfig, BundleAnalyzerConfig],
+	plugins: [
+		HtmlWebpackPluginConfig,
+		PurgecssPluginConfig,
+		MiniCssExtractPluginConfig,
+		BundleAnalyzerConfig,
+	],
 	resolve: {
 		extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json'],
 	},

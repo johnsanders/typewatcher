@@ -1,6 +1,10 @@
 import React from 'react';
 import Autosuggest from 'react-autosuggest';
-import { getSuggestions, getSuggestionValue, renderSuggestion } from '../helpers/autosuggest';
+import {
+	getSuggestions,
+	getSuggestionValue,
+	shouldRenderSuggestions,
+} from '../helpers/autosuggest';
 
 interface Props {
 	handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -15,6 +19,14 @@ const renderInputComponent = (inputProps: {}): JSX.Element => (
 		</div>
 	</div>
 );
+
+const renderSuggestion = (
+	suggestion: any,
+	params: Autosuggest.RenderSuggestionParams,
+): JSX.Element => {
+	console.log(suggestion, params);
+	return <span>{suggestion.package.name}</span>;
+};
 
 const SearchInput: React.FunctionComponent<Props> = (props: Props): JSX.Element => {
 	const [suggestions, setSuggestions] = React.useState([]);
@@ -36,6 +48,7 @@ const SearchInput: React.FunctionComponent<Props> = (props: Props): JSX.Element 
 			onSuggestionsFetchRequested={onSuggestionsFetchRequested}
 			renderInputComponent={renderInputComponent}
 			renderSuggestion={renderSuggestion}
+			shouldRenderSuggestions={shouldRenderSuggestions}
 			suggestions={suggestions}
 		/>
 	);
