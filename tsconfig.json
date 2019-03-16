@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "typescript-tslint-plugin",
+				"autoFixOnSave": true
+			}
+		],
+		"sourceMap": true,
+		"module": "commonjs",
+		"lib": ["dom", "esnext"],
+		"target": "es6",
+		"jsx": "react",
+		"noImplicitAny": false,
+		"noUnusedLocals": true,
+		"esModuleInterop": true,
+		"noUnusedParameters": true,
+		"resolveJsonModule": true
+	},
+	"include": ["./src/**/*"]
+}
