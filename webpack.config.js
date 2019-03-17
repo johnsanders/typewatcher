@@ -17,7 +17,6 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 const PurgecssPluginConfig = new PurgecssPlugin({
 	paths: glob.sync(path.resolve('./src/**/*'), { nodir: true }),
 	keyframes: true,
-	whitelist: ['react-autosuggest__suggestions-list li'],
 	whitelistPatterns: [/react-autosuggest/],
 });
 const MiniCssExtractPluginConfig = new MiniCssExtractPlugin({ filename: '[name].css' });

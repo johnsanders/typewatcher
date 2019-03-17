@@ -10,4 +10,4 @@ export const getSuggestions = async (searchTerm: string): Promise<any[]> => {
 	return res.data;
 };
 
-export const getSuggestionValue = (suggestion: any): string => suggestion.name;
+export const getSuggestionValue = (suggestion: NpmModule): string => suggestion.package.name;

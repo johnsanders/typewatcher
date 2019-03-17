@@ -7,8 +7,12 @@ import {
 } from '../helpers/autosuggest';
 
 interface Props {
-	handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	handleSearchChange: (
+		e: React.ChangeEvent<HTMLInputElement>,
+		params: Autosuggest.ChangeEvent,
+	) => void;
 	searchTerm: string;
+	setSelectedModule: (module: NpmModule) => void;
 }
 
 const renderInputComponent = (inputProps: {}): JSX.Element => (
@@ -22,9 +26,8 @@ const renderInputComponent = (inputProps: {}): JSX.Element => (
 
 const renderSuggestion = (
 	suggestion: any,
-	params: Autosuggest.RenderSuggestionParams,
+	_params: Autosuggest.RenderSuggestionParams,
 ): JSX.Element => {
-	console.log(suggestion, params);
 	return <span>{suggestion.package.name}</span>;
 };
 
@@ -37,6 +40,12 @@ const SearchInput: React.FunctionComponent<Props> = (props: Props): JSX.Element 
 	const onSuggestionsClearRequested = (): void => {
 		setSuggestions([]);
 	};
+	const handleModuleSelected = (
+		_e: React.FormEvent,
+		data: Autosuggest.SuggestionSelectedEventData<NpmModule>,
+	): void => {
+		console.log(data);
+	};
 	return (
 		<Autosuggest
 			getSuggestionValue={getSuggestionValue}
@@ -44,6 +53,7 @@ const SearchInput: React.FunctionComponent<Props> = (props: Props): JSX.Element 
 				onChange: props.handleSearchChange,
 				value: props.searchTerm,
 			}}
+			onSuggestionSelected={handleModuleSelected}
 			onSuggestionsClearRequested={onSuggestionsClearRequested}
 			onSuggestionsFetchRequested={onSuggestionsFetchRequested}
 			renderInputComponent={renderInputComponent}
