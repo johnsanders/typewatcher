@@ -9,6 +9,7 @@ interface Props {
 		params: Autosuggest.ChangeEvent,
 	) => void;
 	handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+	isTypedModule: (name: string) => boolean;
 	searchTerm: string;
 	selectedModule: NpmModule;
 	setSelectedModule: (module: NpmModule) => void;
