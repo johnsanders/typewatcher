@@ -33,3 +33,11 @@ interface NpmModule {
 	};
 	searchScore: number;
 }
+interface TypedModule {
+	d: number;
+	g: string[];
+	l: string;
+	m: string[];
+	p: string;
+	t: string;
+}

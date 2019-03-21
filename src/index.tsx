@@ -1,9 +1,9 @@
+import './styles/style.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HomeContainer from './components/HomeContainer';
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './styles/style.css';
-import HomeContainer from './components/HomeContainer';
 
 render(
 	<BrowserRouter basename="/typewatcher">

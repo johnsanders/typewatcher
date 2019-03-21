@@ -1,6 +1,6 @@
-import React from 'react';
 import Autosuggest from 'react-autosuggest';
 import ModuleResult from './ModuleResult';
+import React from 'react';
 import SearchInput from './SearchInput';
 
 interface Props {

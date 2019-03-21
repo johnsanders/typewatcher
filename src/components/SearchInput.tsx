@@ -1,10 +1,10 @@
-import React from 'react';
-import Autosuggest from 'react-autosuggest';
 import {
-	getSuggestions,
 	getSuggestionValue,
+	getSuggestions,
 	shouldRenderSuggestions,
 } from '../helpers/autosuggest';
+import Autosuggest from 'react-autosuggest';
+import React from 'react';
 
 interface Props {
 	handleSearchChange: (
@@ -44,7 +44,7 @@ const SearchInput: React.FunctionComponent<Props> = (props: Props): JSX.Element 
 		_e: React.FormEvent,
 		data: Autosuggest.SuggestionSelectedEventData<NpmModule>,
 	): void => {
-		console.log(data);
+		props.setSelectedModule(data.suggestion);
 	};
 	return (
 		<Autosuggest

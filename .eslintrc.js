@@ -7,8 +7,10 @@ module.exports = {
 	extends: [
 		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
-		'airbnb',
-		'plugin:prettier/recommended',
+		'prettier',
+		'prettier/@typescript-eslint',
+		'prettier/babel',
+		'prettier/react',
 	],
 	parserOptions: {
 		ecmaVersion: 2018,
@@ -19,7 +21,7 @@ module.exports = {
 	},
 	rules: {
 		'@typescript-eslint/no-explicit-any': 0,
-		'prettier/prettier': 'error',
+		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
 		'sort-imports': 'error',
 	},
 	settings: {
