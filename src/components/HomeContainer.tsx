@@ -3,7 +3,7 @@ import Home from './Home';
 import React from 'react';
 import axios from 'axios';
 
-const typedModulesUrl = '';
+const typedModulesUrl = 'http://johnsanders.tv/search-index-min.json';
 
 const HomeContainer: React.FunctionComponent = (): JSX.Element => {
 	const [searchTerm, setSearchTerm] = React.useState<string>('');
