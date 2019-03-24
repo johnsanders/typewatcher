@@ -21,8 +21,9 @@ module.exports = {
 	},
 	rules: {
 		'@typescript-eslint/no-explicit-any': 0,
-		'@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+		'@typescript-eslint/no-unused-vars': 0, // TS handles this
 		'sort-imports': 'error',
+		'react/prop-types': 0,
 	},
 	settings: {
 		'import/resolver': {

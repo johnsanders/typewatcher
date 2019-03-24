@@ -11,8 +11,8 @@
 		"update": "yarn upgrade-interactive --latest"
 	},
 	"dependencies": {
-		"@fortawesome/fontawesome-svg-core": "^1.2.16",
-		"@fortawesome/pro-solid-svg-icons": "^5.8.0",
+		"@fortawesome/fontawesome-svg-core": "^1.2.17",
+		"@fortawesome/pro-solid-svg-icons": "^5.8.1",
 		"@fortawesome/react-fontawesome": "^0.1.4",
 		"@johnsand/spinner": "^1.4.4",
 		"axios": "^0.18.0",

@@ -1,3 +1,5 @@
+declare module '*.jpg';
+
 interface NpmUser {
 	email: string;
 	username: string;
@@ -32,12 +34,4 @@ interface NpmModule {
 		};
 	};
 	searchScore: number;
-}
-interface TypedModule {
-	d: number;
-	g: string[];
-	l: string;
-	m: string[];
-	p: string;
-	t: string;
 }
