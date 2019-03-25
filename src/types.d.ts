@@ -35,3 +35,8 @@ interface NpmModule {
 	};
 	searchScore: number;
 }
+interface JwtPayload {
+	iss?: string;
+	exp?: number;
+	sub?: string;
+}
