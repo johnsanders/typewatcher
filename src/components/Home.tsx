@@ -2,7 +2,7 @@ import Autosuggest from 'react-autosuggest';
 import ModuleResult from './ModuleResult';
 import React from 'react';
 import SearchInput from './SearchInput';
-import dog from '../img/dog.jpg';
+import dog from '../img/dog.png';
 
 interface Props {
 	handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

@@ -1,4 +1,4 @@
-declare module '*.jpg';
+declare module '*.png';
 
 interface NpmUser {
 	email: string;

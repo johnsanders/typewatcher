@@ -8,15 +8,6 @@ import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { faCheck } from '@fortawesome/pro-solid-svg-icons';
 
-const renderInputComponent = (inputProps: {}): JSX.Element => (
-	<div className="input-group">
-		<input {...inputProps} className="form-control" />
-		<div className="input-group-append">
-			<input type="submit" className="btn btn-primary" value="Search" />
-		</div>
-	</div>
-);
-
 interface Props {
 	handleSearchChange: (
 		e: React.ChangeEvent<HTMLInputElement>,
@@ -66,11 +57,11 @@ const SearchInput: React.FunctionComponent<Props> = (props: Props): JSX.Element 
 					onChange: props.handleSearchChange,
 					value: props.searchTerm,
 					placeholder: 'leftpad',
+					className: 'form-control',
 				}}
 				onSuggestionSelected={handleModuleSelected}
 				onSuggestionsClearRequested={onSuggestionsClearRequested}
 				onSuggestionsFetchRequested={onSuggestionsFetchRequested}
-				renderInputComponent={renderInputComponent}
 				renderSuggestion={renderSuggestion}
 				shouldRenderSuggestions={shouldRenderSuggestions}
 				suggestions={suggestions}
